@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "littleponey"
+    }
+  },
+  "defaultProject": "littleponey",
+  "cli": {
+    "analytics": "fd785e09-a256-4d34-9843-b1700aaad14f"
+  }
 }
