@@ -10,6 +10,6 @@ export class Race {
     this.id_race = id === undefined ? 0 : id;
     this.location = location === undefined ? 'location' : location;
     this.date = date === undefined ? new Date() : date;
-    this.ponies = ponies === undefined ? PONIES : ponies;
+    this.ponies = [];
   }
 }

@@ -1,4 +1,3 @@
-import {Pony} from './pony';
 import {Race} from './race';
 import {PONIES} from './mock-ponies';
 
