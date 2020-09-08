@@ -6,7 +6,7 @@ export class Race {
   location: string;
   date: Date;
   ponies: Pony[];
-  constructor(id?: number, location?: string, date?: Date, ponies?: Pony[]) {
+  constructor(id?: number, location?: string, date?: Date) {
     this.id_race = id === undefined ? 0 : id;
     this.location = location === undefined ? 'location' : location;
     this.date = date === undefined ? new Date() : date;

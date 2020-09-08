@@ -1,0 +1,13 @@
+<h1>Entrer votre nouvelle course</h1>
+<form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+  <label for="">Nom</label>
+  <input type="text" id="name" name="name" formControlName="location"/>
+  <br/>
+
+  <label for="">Couleur</label>
+  <input type="date" id="color" name="color" formControlName="date"/>
+  <br/>
+
+  <button type="submit">Enregistrer</button>
+</form>
+

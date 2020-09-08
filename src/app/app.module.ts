@@ -10,15 +10,20 @@ import { NameRacePipePipe } from './name-race-pipe.pipe';
 import { RaceDetailsComponent } from './race-details/race-details.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PonyComponent } from "./pony/pony.component";
 import { AddRaceComponent } from './add-race/add-race.component';
+import { PonyReactiveComponent } from './pony-reactive/pony-reactive.component';
+import { AddRaceReactiveComponent } from './add-race-reactive/add-race-reactive.component';
+
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
   { path: 'races', component: RacesComponent},
-  { path: 'add-pony', component: PonyComponent},
+  { path: 'add-pony', component: PonyReactiveComponent},
+  { path: 'update-pony/:id', component: PonyComponent},
   { path: 'add-race', component: AddRaceComponent},
+  { path: 'update-race/:id', component: AddRaceComponent},
 ];
 
 @NgModule({
@@ -31,12 +36,15 @@ const ROUTES: Routes = [
     RaceDetailsComponent,
     MenuComponent,
     PonyComponent,
-    AddRaceComponent
+    AddRaceComponent,
+    PonyReactiveComponent,
+    AddRaceReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],

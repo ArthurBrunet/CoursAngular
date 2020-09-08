@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pony} from "../pony";
 import {PONIES} from "../mock-ponies";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-pony',
@@ -11,15 +11,33 @@ import {Router} from "@angular/router";
 export class PonyComponent implements OnInit {
 
   newPony: Pony;
-  constructor(private router : Router) {
+  add: boolean;
+  constructor(private router : Router, private route: ActivatedRoute) {
     this.newPony = new Pony();
+    this.add = true;
   }
 
   ngOnInit(): void {
+    if (this.route.snapshot.paramMap.get('id') == null){
+      this.add = true;
+    }else{
+      this.add = false;
+      const id = parseInt(this.route.snapshot.paramMap.get('id'),0);
+      for (let index = 0; index < PONIES.length; index++){
+        if (PONIES[index].id_poney == id){
+          this.newPony = PONIES[index];
+          break
+        }
+      }
+    }
   }
 
   onSubmit(): void {
-    PONIES.push(this.newPony)
+    if(this.add){
+      PONIES.push(this.newPony)
+    }else{
+      console.log('update pony');
+    }
     this.router.navigate(['/'])
   }
 }
